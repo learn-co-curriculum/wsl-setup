@@ -8,15 +8,15 @@
 1) Windows Subsytem Linux (WSL) is **not** automaticaly enabled on windows. So, to start off, we ned to enable it!  
     1) Go to your Windows Search bar and type in `turn windows features on or off`
     2)  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:  
- ![toggle windows features](.\assets\turn-windows-features-on-or-off.png)  
+ ![toggle windows features](./assets/turn-windows-features-on-or-off.png)  
 
     3)  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!  
-   ![wsl checkbox](.\assets\wsl-turnon.png)
+   ![wsl checkbox](./assets/wsl-turnon.png)
 2)  Restart your computer
 3)  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
-   ![windows version](.\assets\windows-version.png)
+   ![windows version](./assets/windows-version.png)
 4)  Open up Microsoft Store. Search for "Ubuntu"
-    1) Choose "Ubuntu" ![ubuntu choice in microsoft store](.\assets\ubuntu-choice.png)
+    1) Choose "Ubuntu" ![ubuntu choice in microsoft store](./assets/ubuntu-choice.png)
 5) If you run into errors or if you have an early version of Windows 10, see further information [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 6) Open up the Ubuntu app. Follow the prompts, which will include making a username and password. Don't forget your password!
 
