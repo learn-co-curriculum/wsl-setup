@@ -193,7 +193,7 @@ code .
 ```
 (if you are in your Linux file system, VSCode will open, but not to the right spot).
 
-## Advanced topics: Database setup, .bashrc, .learn-config
+## Advanced topics: PostgreSQL setup, .bashrc, .learn-config
 
 **.bashrc and .learn-config modifications**
 
