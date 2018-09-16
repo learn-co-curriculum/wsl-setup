@@ -141,7 +141,7 @@ You can use any editor you want, but I am going to be walking through setting up
         "editor.fontSize": 11,
         "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
          ```
-    - Noe that for the Hack font to be usable, you have to downlload it. You can check it out [here](https://sourcefoundry.org/hack/).
+    - Note that for the Hack font to be usable, you have to downlload it. You can check it out [here](https://sourcefoundry.org/hack/).
 
 
 
