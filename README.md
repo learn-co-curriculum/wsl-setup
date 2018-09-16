@@ -239,11 +239,12 @@ and customizing where you want the ```learn open``` command to save labs, and se
 
  - Enter the password you defined during the download
  - Your PostgreSQL server is running, and can now be integrated into your projects.
- - You can also set up a new user/role and password that you want to use with your rails app. Ensure you give your user/role all available permissions during setup.
+ - You also want to set up a new user/role and password that you want to use with your rails app. Ensure you give your user/role all available permissions during setup.
+    - During setup, ensure to fill out `Name` in the `General` tab, `Password` in the `Definition` tab, and enable all permissions in the `Privileges` tab.
 
-![create user](./assets/pgadmin-create-user.png)
+![create user](./assets/pgadmin-create-user.png)  
 
-
+![create user permissions](./assets/create-user-permissions.png)
 
   **EXAMPLE: CONNECTING YOUR POSTGRESQL SERVER TO YOUR RAILS APP**
 
@@ -284,7 +285,7 @@ and customizing where you want the ```learn open``` command to save labs, and se
   ![posts](./assets/posts.png)
 - Now just follow the crud links and try to make a post! We should be seeing our database working great with our rails app!
 
-![](./assets/database-works.png)
+![database works](./assets/database-works.png)
 
 - Hopefully everything is working for you! Now you're ready to develop using WSL!
 ---
