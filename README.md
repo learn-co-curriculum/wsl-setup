@@ -103,7 +103,7 @@
     gem install rails
     ```
 
-## Choose your programming editor weapon: VSCode
+## Choose your programming editor: VSCode
 
 You can use any editor you want, but I am going to be walking through setting up VSCode.
 
