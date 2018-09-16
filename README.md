@@ -1,11 +1,10 @@
+# Setting up Windows Subsystem for Linux for Development
 
-# Setting up Windows Subsytem for Linux for Development
-
-*It is no longer necessary to enable developer mode for Windows Subsytem Linux to work*
+*It is no longer necessary to enable developer mode for Windows Subsystem Linux to work*
 
 ## Getting Windows Ready
 
-1) Windows Subsytem Linux (WSL) is **not** automaticaly enabled on windows. So, to start off, we ned to enable it!  
+1) Windows Subsystem Linux (WSL) is **not** automatically enabled on windows. So, to start off, we need to enable it!  
     1) Go to your Windows Search bar and type in `turn windows features on or off`
     2)  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:  
  ![toggle windows features](.\assets\turn-windows-features-on-or-off.png)  
@@ -16,7 +15,7 @@
 3)  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
    ![windows version](.\assets\windows-version.png)
 4)  Open up Microsoft Store. Search for "Ubuntu"
-    1) Choose "Ubuntu" ![ubuntu choice in microsoft store](.\assets\ubuntu-choice.png)
+    1) Choose "Ubuntu" ![ubuntu choice in Microsoft store](.\assets\ubuntu-choice.png)
 5) If you run into errors or if you have an early version of Windows 10, see further information [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 6) Open up the Ubuntu app. Follow the prompts, which will include making a username and password. Don't forget your password!
 
@@ -73,7 +72,7 @@
     ```
     git config --global user.email "your_email@example.com"
     ```
-    You can either communicate with your remote repositories via HTTPS or SSH. If you want to use SSH (which means you wil not have to authenticate with your github username and password before each push) - [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+    You can either communicate with your remote repositories via HTTPS or SSH. If you want to use SSH (which means you will not have to authenticate with your GitHub username and password before each push) - [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
 6)  Now we can get set up with the learn-co gem. This will allow you to use commands like `learn`, `learn submit`, and `learn open`.
 
@@ -90,7 +89,7 @@
 
     You should now be fully authenticated with learn.
 
-7)  Now let's get nodejs installed, and then rails so we can make a bunch of stuff!
+7)  Now let's get NodeJS installed, and then Rails so we can make a bunch of stuff!
 
  - First, nodejs: 
 
@@ -108,20 +107,20 @@
 
 You can use any editor you want, but I am going to be walking through setting up VSCode.
 
-1) Download VSCode [here](https://code.visualstudio.com/download). Choose the Windows download, not the Linux download. Any required linux downloads will be done via the Ubuntu terminal, and everything else should be downloaded for your Windows OS.
+1) Download VSCode [here](https://code.visualstudio.com/download). Choose the Windows download, not the Linux download. Any required Linux downloads will be done via the Ubuntu terminal, and everything else should be downloaded for your Windows OS.
 
 2) To configure your Ubuntu terminal to be available in VSCode: 
 
     - open up VSCode
     - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
-    - begin typing the following : `Terminal: Select Default Shell`  until you see it. Select that option.
+    - begin typing the following: `Terminal: Select Default Shell`  until you see it. Select that option.
 
     ![command palette](./assets/default-shell.png)  
 
     - Once you select it, a few options will pop up. You want to select WSL
 
     ![WSL Terminal](./assets/wsl-bash-selection.png)
-3) Now, you can use your Ubuntu terminal in VSCode. Select "New Terminal" in the "Terminal" drop-down, or type `Ctr`+`Shift`+` in order to use it!
+3) Now, you can use your Ubuntu terminal in VSCode. Select "New Terminal" in the "Terminal" drop-down, or type `Ctrl`+`Shift`+` in order to use it!
 
 4) Additional User Settings:
     - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting. 
@@ -150,14 +149,14 @@ You can use any editor you want, but I am going to be walking through setting up
 
 ## Important Knowledge: Basic Use 
 
-Your terminal is actually accessing a Ubuntu Virtual Machine which is running inside of your Windows OS. If you ever ```cd``` in your terminal, you will be sent to the 'user home' of your Linux VM. That is also the default location you will be in when you open your Ubuntu app. You actually want to do all of your business inside of your normal Windows file space, not your Linux VM file space. So, you will need to know how to navigate in your terminal from your Ubuntu file system to your Windows file system. This is pretty simple if you understand how the system is set up, so let's go over that quickly. 
+Your terminal is actually accessing an Ubuntu Virtual Machine which is running inside of your Windows OS. If you ever ```cd``` in your terminal, you will be sent to the 'user home' of your Linux VM. That is also the default location you will be in when you open your Ubuntu app. You actually want to do all of your business inside of your normal Windows file space, not your Linux VM file space. So, you will need to know how to navigate in your terminal from your Ubuntu file system to your Windows file system. This is pretty simple if you understand how the system is set up, so let's go over that quickly. 
 
 To allow you to access the functionality of a Linux machine, Windows stores the Ubuntu OS and file system inside of its own file system. You should NEVER access your Ubuntu files via your Windows machine. What you SHOULD do is save everything you are working on in your normal Windows filespace, and access that via your Ubuntu terminal. So, how do you do that? Well, from the Ubuntu's point of view, it is just a normal Linux machine, but Microsoft has made a pathway between the Linux VM and your Windows OS via the `/mnt` directory in your Ubuntu's root. 
 
-Here is a quick visual of what the first few levels of any Linux filesystem looks like:  
+Here is a quick visual of what the first few levels of any Linux filesystem look like:  
 ![linux file system](./assets/linux_fs.png)
 
-As you can see, the `mnt` directory is made for other files ystems, so that is where Microsoft connected your Linux to your Windows machine:
+As you can see, the `mnt` directory is made for other filesystems, so that is where Microsoft connected your Linux to your Windows machine:
 
 ![linux file system](./assets/linux_fs_path.png)
 
@@ -172,7 +171,7 @@ cd ../../mnt/c/users/your_windows_username
 ```
 If you put either of those lines at the bottom of your .bashrc file (found in `/home/your_linux_username/.bashrc`) you will automatically be started in your windows home directory when you start up your Ubuntu app, which is ideal. 
 
-You can easily change your .bashrc file by navigating to your linux home (by running just `cd`) and typing:
+You can easily change your .bashrc file by navigating to your Linux home (by running just `cd`) and typing:
 
 ```
 nano .bashrc
@@ -184,15 +183,15 @@ You are going to want to backup your .bashrc file first though so you don't mess
 cp .bashrc .bashrc.bak
 ```
 
-You save a file you have modified in `nano` by folliwng the directions at the bottom of the screen: click `Ctrl`+`X` and then `Enter` to save your changes.
+You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `Enter` to save your changes.
 
-If you feel uncomfortable with these commands, check out the basic linux commands link below in the resources. 
+If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources. 
 
 Remember, put all of your stuff in your windows directories! That way, you have access to it via your Linux Terminal or your Windows OS, and your VSCode editor can open to the correct location when you use
 ```
 code .
 ```
-(if you are in your linux file system, VSCode will open, but not to the right spot).
+(if you are in your Linux file system, VSCode will open, but not to the right spot).
 
 ## Advanced topics: Database setup, .bashrc, .learn-config
 
@@ -200,7 +199,7 @@ code .
 
 To get a learn-customized .bashrc file, follow simple instructions [here](https://github.com/Enoch2k2/flatiron-wsl-bashrc)
 
-If you travel to your linux home directory by typing `cd`, you can change your .learn-config by typing 
+If you travel to your Linux home directory by typing `cd`, you can change your .learn-config by typing 
 ```
 nano .learn-config
 ```
@@ -249,7 +248,7 @@ and customizing where you want the ```learn open``` command to save labs, and se
   **EXAMPLE: CONNECTING YOUR POSTGRESQL SERVER TO YOUR RAILS APP**
 
   - Make sure your server is connected and roles are configured as described above.
-  - Make sure you are in a suitable directory (in your Windows file system space) and create a Rails app configured to use postgreSQL: 
+  - Make sure you are in a suitable directory (in your Windows file system space) and create a Rails app configured to use PostgreSQL: 
     ```
     rails new my-first-app --database=postgresql
     ```    
@@ -261,7 +260,7 @@ and customizing where you want the ```learn open``` command to save labs, and se
     user: your-postgres-username
     password: your-postgres-usernames-password
     ```
-- We can now test our database and rails iteroperability by first setting up some architecture in our app: 
+- We can now test our database and rails interoperability by first setting up some architecture in our app: 
 
     ```
     rails g scaffold Post title:string body:text
@@ -273,21 +272,21 @@ and customizing where you want the ```learn open``` command to save labs, and se
     rake db:migrate
     ```
 
-- If these fail, ensure you have added your database.yml configurations under both the devvelopment AND test sections
+- If these fail, ensure you have added your database.yml configurations under both the development AND test sections
 
 - Now, start a server:
     ```
     rails s
     ```
-- If you navigate to `localhost:3000` you should see that we are on rails!  
-  ![on rails](./assets/on-rails.png)
+- If you navigate to `localhost:3000` you should see that we are on Rails!  
+  ![on Rails](./assets/on-rails.png)
 - Let's test our database by going to 'localhost:3000/posts'   
   ![posts](./assets/posts.png)
 - Now just follow the crud links and try to make a post! We should be seeing our database working great with our rails app!
 
 ![database works](./assets/database-works.png)
 
-- Hopefully everything is working for you! Now you're ready to develop using WSL!
+- Hopefully, everything is working for you! Now you're ready to develop using WSL!
 ---
 ## Resources
 
