@@ -143,9 +143,24 @@ You can use any editor you want, but I am going to be walking through setting up
          ```
     - Note that for the Hack font to be usable, you have to downlload it. You can check it out [here](https://sourcefoundry.org/hack/).
 
+5. Update your .learn-config
+    - Travel to your Linux home directory by typing `cd`, you can change your .learn-config by typing:
 
+    ```
+    nano .learn-config
+    ```
 
+    - and customizing where you want the ```learn open``` command to save labs, and setting your editor to VSCode. Here's what it should look like:
 
+    ```
+    ---
+    :learn_directory: "/mnt/c/users/<your username>/dev/flatiron/labs"
+    :editor: code
+    ```
+
+    - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `Enter` to save your changes.
+
+    - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources. 
 
 ## Important Knowledge: Basic Use 
 
@@ -169,23 +184,6 @@ or
 ```
 cd ../../mnt/c/users/your_windows_username
 ```
-If you put either of those lines at the bottom of your .bashrc file (found in `/home/your_linux_username/.bashrc`) you will automatically be started in your windows home directory when you start up your Ubuntu app, which is ideal. 
-
-You can easily change your .bashrc file by navigating to your Linux home (by running just `cd`) and typing:
-
-```
-nano .bashrc
-```
-
-You are going to want to backup your .bashrc file first though so you don't mess it up. You can do that by copying a backup using
-
-```
-cp .bashrc .bashrc.bak
-```
-
-You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `Enter` to save your changes.
-
-If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources. 
 
 Remember, put all of your stuff in your windows directories! That way, you have access to it via your Linux Terminal or your Windows OS, and your VSCode editor can open to the correct location when you use
 ```
@@ -193,26 +191,34 @@ code .
 ```
 (if you are in your Linux file system, VSCode will open, but not to the right spot).
 
-## Advanced topics: PostgreSQL setup, .bashrc, .learn-config
+## Adding A Flatiron Customization To Your Terminal
 
-**.bashrc and .learn-config modifications**
-
-To get a learn-customized .bashrc file, follow simple instructions [here](https://github.com/Enoch2k2/flatiron-wsl-bashrc)
-
-If you travel to your Linux home directory by typing `cd`, you can change your .learn-config by typing 
-```
-nano .learn-config
-```
-
-and customizing where you want the ```learn open``` command to save labs, and setting your editor to VSCode. Here's what mine looks like: 
+Start out by making a backup for your `.bashrc`
 
 ```
----
-:learn_directory: "/mnt/c/users/micah/dev/flatiron/labs"
-:editor: code
+mv .bashrc .bashrc.bak
+```
+
+We will want a tool for converting Windows ending to Unix endings for our new `.bashrc`
+
+```
+sudo apt-get install dos2unix
+```
+
+download the new `.bashrc`
+
+```
+curl -R "https://raw.githubusercontent.com/Enoch2k2/flatiron-wsl-bashrc/master/.bashrc" >> $HOME/.bashrc
+```
+
+We'll use our converter to convert our bashrc to use the right unix endings:
+
+```
+dos2unix .bashrc
 ```
 
 
+## Advanced topics: PostgreSQL setup
 
 **Setting up PostgreSQL allows simple production-level database integration into a Rails project. This allows easy hosting on Heroku with only a little setup.**
 
