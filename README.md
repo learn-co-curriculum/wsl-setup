@@ -5,14 +5,23 @@
 
 ## Getting Windows Ready
 
-1) Windows Subsystem Linux (WSL) is **not** automatically enabled on windows. So, to start off, we need to enable it!  
-    1) Go to your Windows Search bar and type in `turn windows features on or off`
-    2)  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:  
- ![toggle windows features](./assets/turn-windows-features-on-or-off.png)  
+1) Windows Subsystem Linux (WSL) is **not** automatically enabled on windows. So, to start off, we need to enable it!    
+   
+    a. Go to your Windows Search bar and type in `turn windows features on or off`  
+      
 
-    3)  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!  
-   ![wsl checkbox](./assets/wsl-turnon.png)
-2)  Restart your computer
+    b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:    
+
+ ![toggle windows features](./assets/turn-windows-features-on-or-off.png)    
+  
+  
+   c.  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!    
+     
+
+   ![wsl checkbox](./assets/wsl-turnon.png)  
+     
+
+2)  **Restart your computer**
 3)  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
    ![windows version](./assets/windows-version.png)
 4)  Open up Microsoft Store. Search for "Ubuntu"
@@ -27,7 +36,7 @@ Note: if you get an error at this step, see FAQ below.
 
 ## Start Outfitting your new Linux Subsystem: RVM / Ruby, learn-co, git, NodeJS, and Rails
 
-1) Once everything is set up, we can start setting up our system! Start off by running the following to download our dependencies: 
+7) Once everything is set up, we can start setting up our system! Start off by running the following to download our dependencies: 
 
 
     ``` 
@@ -36,7 +45,7 @@ Note: if you get an error at this step, see FAQ below.
     ```
     sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev libpq-dev libgdbm-dev libncurses5-dev automake libtool bison gnupg
     ```
-2) Install RVM by running:
+8) Install RVM by running:
 
     ```
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -52,19 +61,19 @@ Note: if you get an error at this step, see FAQ below.
     source ~/.rvm/scripts/rvm
     ```
 
-3)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.3.3 and set it as our default: 
+9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.3.3 and set it as our default: 
 
     ```
     rvm install 2.3.3
     rvm use 2.3.3 --default
     ```
 
-4)  Let's install the bundler gem:
+10)  Let's install the bundler gem:  
 
-    ```
-    gem install bundler
-    ```
-5)  And set up git:
+        ```
+        gem install bundler
+        ```
+11) And set up git:
 
     ```
     git config --global color.ui true
@@ -80,7 +89,7 @@ Note: if you get an error at this step, see FAQ below.
     ```
     You can either communicate with your remote repositories via HTTPS or SSH. If you want to use SSH (which means you will not have to authenticate with your GitHub username and password before each push) - [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
-6)  Now we can get set up with the learn-co gem. This will allow you to use commands like `learn`, `learn submit`, and `learn open`.
+12) Now we can get set up with the learn-co gem. This will allow you to use commands like `learn`, `learn submit`, and `learn open`.
 
     ```
     gem install learn-co
@@ -95,7 +104,7 @@ Note: if you get an error at this step, see FAQ below.
 
     You should now be fully authenticated with learn.
 
-7)  Now let's get NodeJS installed, and then Rails so we can make a bunch of stuff!
+13) Now let's get NodeJS installed, and then Rails so we can make a bunch of stuff!
 
  - First, nodejs: 
 
@@ -113,9 +122,9 @@ Note: if you get an error at this step, see FAQ below.
 
 You can use any editor you want, but I am going to be walking through setting up VSCode.
 
-1) Download VSCode [here](https://code.visualstudio.com/download). Choose the Windows download, not the Linux download. Any required Linux downloads will be done via the Ubuntu terminal, and everything else should be downloaded for your Windows OS.
+14) Download VSCode [here](https://code.visualstudio.com/download). Choose the Windows download, not the Linux download. Any required Linux downloads will be done via the Ubuntu terminal, and everything else should be downloaded for your Windows OS.
 
-2) To configure your Ubuntu terminal to be available in VSCode: 
+15) To configure your Ubuntu terminal to be available in VSCode: 
 
     - open up VSCode
     - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
@@ -126,9 +135,9 @@ You can use any editor you want, but I am going to be walking through setting up
     - Once you select it, a few options will pop up. You want to select WSL
 
     ![WSL Terminal](./assets/wsl-bash-selection.png)
-3) Now, you can use your Ubuntu terminal in VSCode. Select "New Terminal" in the "Terminal" drop-down, or type `Ctrl`+`Shift`+` in order to use it!
+16) Now, you can use your Ubuntu terminal in VSCode. Select "New Terminal" in the "Terminal" drop-down, or type `Ctrl`+`Shift`+` in order to use it!
 
-4) Additional User Settings:
+17) Additional User Settings *(OPTIONAL)*:
     - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting. 
     - To open up user settings, again open up the Command Palette using `F1` or `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
     ![Preferences - settings](./assets/settings-json.png)
@@ -149,7 +158,7 @@ You can use any editor you want, but I am going to be walking through setting up
          ```
     - Note that for the Hack font to be usable, you have to downlload it. You can check it out [here](https://sourcefoundry.org/hack/).
 
-5. Update your .learn-config
+18) Update your .learn-config
     - Travel to your Linux home directory by typing `cd`, you can change your .learn-config by typing:
 
     ```
@@ -224,7 +233,7 @@ dos2unix .bashrc
 ```
 
 
-## Advanced topics: PostgreSQL setup
+## Advanced topics: PostgreSQL setup (OPTIONAL)
 
 **Setting up PostgreSQL allows simple production-level database integration into a Rails project. This allows easy hosting on Heroku with only a little setup.**
 
