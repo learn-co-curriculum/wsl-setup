@@ -164,7 +164,7 @@ You can use any editor you want, but I am going to be walking through setting up
     :editor: code
     ```
 
-    - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `Enter` to save your changes.
+    - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter` to save your changes.
 
     - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources. 
 
