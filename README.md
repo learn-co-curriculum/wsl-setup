@@ -238,7 +238,7 @@ dos2unix .bashrc
 **Setting up PostgreSQL allows simple production-level database integration into a Rails project. This allows easy hosting on Heroku with only a little setup.**
 
 1) First, we want to [Download PostgreSQL for Windows](https://www.postgresql.org/download/windows/) - download the Interactive Installer.
-2) Once everything is downloaded, you can verify proper operation by typing in your terminal
+2) Once everything is downloaded and installed, you can verify proper operation by typing in your terminal
 
     ```
     psql -p 5432 -h localhost -U postgres
