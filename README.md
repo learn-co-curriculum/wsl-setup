@@ -311,6 +311,25 @@ dos2unix .bashrc
 ![database works](./assets/database-works.png)
 
 - Hopefully, everything is working for you! Now you're ready to develop using WSL!
+
+---
+
+## FAQ
+
+If you get the error: `Windows Subsystem for Linux has no installed distributions. Distributions can be installed by visiting the Windows Store: https://aka.ms/wslstore Press any key to continue...`
+
+1. Search for 'Services' in your Windows search bar, open it up  
+
+![find services ](./assets/find_services.png)
+
+2. Scroll down to the `L` section, and find `LxssManager`. If it is running, right click and `Restart` it. If it is not running, right click it and `Start` it.  
+   
+
+![Lxss Manager](./assets/lxss_manager.png)
+
+[You can check out the github issue here](https://github.com/Microsoft/WSL/issues/2576)
+
+
 ---
 ## Resources
 
