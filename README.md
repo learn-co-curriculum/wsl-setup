@@ -18,6 +18,7 @@
     1) Choose "Ubuntu" ![ubuntu choice in microsoft store](./assets/ubuntu-choice.png)
 5) If you run into errors or if you have an early version of Windows 10, see further information [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 6) Open up the Ubuntu app. Follow the prompts, which will include making a username and password. Don't forget your password!
+   ![open ubuntu](./assets/open-ubuntu.png)
 
 ## Start Outfitting your new Linux Subsystem: RVM / Ruby, learn-co, git, NodeJS, and Rails
 
