@@ -1,6 +1,7 @@
 # Setting up Windows Subsystem for Linux for Development
 
-*It is no longer necessary to enable developer mode for Windows Subsystem Linux to work*
+*It is no longer necessary to enable developer mode for Windows Subsystem Linux to work.*  
+
 *You must be running Windows 10 to perform this procedure*
 
 ## Getting Windows Ready
