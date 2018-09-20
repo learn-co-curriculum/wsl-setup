@@ -26,11 +26,13 @@
 3)  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
    ![windows version](./assets/windows-version.png)
 4)  Open up Microsoft Store. Search for "Ubuntu"
-    1) Choose "Ubuntu" (not 16.04 LTS or 18.04 LTS)
+    1) Choose "Ubuntu" (not 16.04 LTS or 18.04 LTS)  
 
 
-![ubuntu choice in microsoft store](./assets/ubuntu-choice.png)
-5) If you run into errors or if you have an early version of Windows 10, see further information [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+![ubuntu choice in microsoft store](./assets/ubuntu-choice.png)    
+
+5) If you run into errors or if you have an early version of Windows 10, see further information  [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
+   
 6) Open up the Ubuntu app. Follow the prompts, which will include making a username and password. Don't forget your password!  
    
    ![open ubuntu](./assets/open-ubuntu.png)  
