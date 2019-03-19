@@ -67,11 +67,11 @@ Note: if you get an error at this step, see FAQ below.
     source ~/.rvm/scripts/rvm
     ```
 
-9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.3.3 and set it as our default: 
+9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.6.1 and set it as our default: 
 
     ```
-    rvm install 2.3.3
-    rvm use 2.3.3 --default
+    rvm install 2.6.1
+    rvm use 2.6.1 --default
     ```
 
 10)  Let's install the bundler gem:  
