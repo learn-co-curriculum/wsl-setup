@@ -167,7 +167,7 @@ You can use any editor you want, but I am going to be walking through setting up
     - some optional personal preferences that I like:
         ```
         "window.zoomLevel": -1,
-        "editor.acceptSuggestionOnEnter": false,
+        "editor.acceptSuggestionOnEnter": "off",
         "editor.fontSize": 11,
         "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
          ```
