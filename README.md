@@ -56,13 +56,20 @@ Note: if you get an error at this step, see FAQ below.
     ```
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     ```
-    > __Note:__ If the previous command does not work the first time (if you see `keyserver receive failed: No dirmngr` and/or `IPC connect call failed`, try running it again. 
+    > __Note:__ There are two possible errors you may see at this point. Follow the appropriate instructions below:
+    
+    > **(A) If** the previous command does not work the first time (with the error `keyserver receive failed: No dirmngr` and/or `IPC connect call failed`, try running it again. 
     >  If the second time works, you should see public keys imported by Piotr Kuczynski and Michal Papis. You can now continue with the procedure and disregard the rest of the instructions in this shaded area.
     >  If the command still does not work (you still get the same errors as the first attempt), then perform the following:
     >
     > ```
     > sudo apt-get install gnupg2 -y
     > gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    > ```
+    > 
+    > **(B) If** the original error you get is `[gpg] keyserver receive failed: Server indicated a failure`, run the following command (following the instructions above if you get the error above):
+    > ```
+    > gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     > ```
     
     Once you have successfully run either the `gpg` or the `gpg2` command above, run the following:
