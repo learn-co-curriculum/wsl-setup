@@ -246,6 +246,33 @@ We'll use our converter to convert our bashrc to use the right unix endings:
 ```
 dos2unix .bashrc
 ```
+## Set up a directory for all of your labs
+
+You'll notice that we set up our `.learn-config` file earlier with a path destination of `/mnt/c/users/<your_windows_username>/dev/flatiron/labs`. The `.bashrc` file we just downloaded gives us a really nice way to access that folder quickly by just typing in `labs` when we pull up our WSL terminal (or anytime you want to access that folder - it doesn't matter what directory you are currently in when you type it). In order for this to work, we need to make sure that these directories exist. To do this, begin by navigating to your `windows home` directory:
+
+```
+cd /mnt/c/users/your_windows_username
+```
+Now, let's make the appropriate files. Run these one at a time, and do it without copying and pasting. Remember the basic bash commands: `cd` changes directories to whatever folder you type in and `mkdir` creates a new directory which will be a subdirectory of the current directory location of your terminal.
+
+```
+mkdir dev
+cd dev
+mkdir flatiron
+cd flatiron
+mkdir labs
+```
+Now you have the directories you need, and you should have seen yourself navigating down your new file tree as you made each new directory and then `cd`'d into it. 
+
+
+Now, `learn open` should work seamlessly by adding your most current lab to the `labs` directory we just made.
+
+Also, you should be able to run the command
+```
+labs
+```
+at any time in your terminal and you will be taken to your `labs`  directory. Give it a try!
+
 
 ## Phantomjs
 
