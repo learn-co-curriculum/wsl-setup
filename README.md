@@ -7,20 +7,20 @@
 ## Getting Windows Ready
 
 1) Windows Subsystem Linux (WSL) is **not** automatically enabled on windows. So, to start off, we need to enable it!    
-   
+
     a. Go to your Windows Search bar and type in `turn windows features on or off`  
-      
+
 
     b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:    
 
  ![toggle windows features](./assets/turn-windows-features-on-or-off.png)    
-  
-  
+
+
    c.  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!    
-     
+
 
    ![wsl checkbox](./assets/wsl-turnon.png)  
-     
+
 
 2)  **Restart your computer**
 3)  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
@@ -32,9 +32,9 @@
 ![ubuntu choice in microsoft store](./assets/ubuntu-choice.png)    
 
 5) If you run into errors or if you have an early version of Windows 10, see further information  [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
-   
+
 6) Open up the Ubuntu app. Follow the prompts, which will include making a username and password. Don't forget your password!  
-   
+
    ![open ubuntu](./assets/open-ubuntu.png)  
 
 
@@ -42,10 +42,10 @@ Note: if you get an error at this step, see FAQ below.
 
 ## Start Outfitting your new Linux Subsystem: RVM / Ruby, learn-co, git, NodeJS, and Rails
 
-7) Once everything is set up, we can start setting up our system! Start off by running the following to download our dependencies: 
+7) Once everything is set up, we can start setting up our system! Start off by running the following to download our dependencies:
 
 
-    ``` 
+    ```
     sudo apt-get update  
     ```
     ```
@@ -57,8 +57,8 @@ Note: if you get an error at this step, see FAQ below.
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     ```
     > __Note:__ There are two possible errors you may see at this point. Follow the appropriate instructions below:
-    
-    > **(A) If** the previous command does not work the first time (with the error `keyserver receive failed: No dirmngr` and/or `IPC connect call failed`, try running it again. 
+
+    > **(A) If** the previous command does not work the first time (with the error `keyserver receive failed: No dirmngr` and/or `IPC connect call failed`, try running it again.
     >  If the second time works, you should see public keys imported by Piotr Kuczynski and Michal Papis. You can now continue with the procedure and disregard the rest of the instructions in this shaded area.
     >  If the command still does not work (you still get the same errors as the first attempt), then perform the following:
     >
@@ -66,12 +66,12 @@ Note: if you get an error at this step, see FAQ below.
     > sudo apt-get install gnupg2 -y
     > gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     > ```
-    > 
+    >
     > **(B) If** the original error you get is `[gpg] keyserver receive failed: Server indicated a failure`, run the following command (following the instructions above if you get the error above):
     > ```
     > gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     > ```
-    
+
     Once you have successfully run either the `gpg` or the `gpg2` command above, run the following:
 
     ```
@@ -83,7 +83,7 @@ Note: if you get an error at this step, see FAQ below.
     source ~/.rvm/scripts/rvm
     ```
 
-9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.6.1 and set it as our default: 
+9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.6.1 and set it as our default:
 
     ```
     rvm install 2.6.1
@@ -116,7 +116,7 @@ Note: if you get an error at this step, see FAQ below.
     ```
     gem install learn-co
     ```
-    - In your browser, navigate to learn.co/your_github_username 
+    - In your browser, navigate to learn.co/your_github_username
     - At the bottom of the page, you should see text that says `OAuth Token:` followed by a token. Copy the token, and then go back to your WSL terminal
     - Type:  
         ```
@@ -126,19 +126,24 @@ Note: if you get an error at this step, see FAQ below.
 
     You should now be fully authenticated with learn.
 
-13) Now let's get NodeJS installed, and then Rails so we can make a bunch of stuff!
+13) Now let's get Node Version Manager, NodeJS, and Rails installed so we can make a bunch of stuff!
 
- - First, nodejs: 
-
-    ```
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    ```
-
-- Next, Ruby on Rails:
-    ```
-    gem install rails
-    ```
+    - First, install NVM:
+      ```
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+      ```
+    - Then, reload bash profile into current session:
+      ```
+      source ~./bashrc
+      ```
+    - Next, install NodeJS:
+      ```
+      nvm install node
+      ```
+    - Now, Ruby on Rails:
+      ```
+      gem install rails
+      ```
 
 ## Choose your programming editor: VSCode
 
@@ -146,7 +151,7 @@ You can use any editor you want, but I am going to be walking through setting up
 
 14) Download VSCode [here](https://code.visualstudio.com/download). Choose the Windows download, not the Linux download. Any required Linux downloads will be done via the Ubuntu terminal, and everything else should be downloaded for your Windows OS.
 
-15) To configure your Ubuntu terminal to be available in VSCode: 
+15) To configure your Ubuntu terminal to be available in VSCode:
 
     - open up VSCode
     - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
@@ -160,7 +165,7 @@ You can use any editor you want, but I am going to be walking through setting up
 16) Now, you can use your Ubuntu terminal in VSCode. Select "New Terminal" in the "Terminal" drop-down, or type `Ctrl`+`Shift`+` in order to use it!
 
 17) Additional User Settings *(OPTIONAL)*:
-    - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting. 
+    - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting.
     - To open up user settings, again open up the Command Palette using `F1` or `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
     ![Preferences - settings](./assets/settings-json.png)
     - You will see a screen like this:
@@ -197,13 +202,13 @@ You can use any editor you want, but I am going to be walking through setting up
 
     - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter` to save your changes.
 
-    - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources. 
+    - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources.
 
-## Important Knowledge: Basic Use 
+## Important Knowledge: Basic Use
 
-Your terminal is actually accessing an Ubuntu Virtual Machine which is running inside of your Windows OS. If you ever ```cd``` in your terminal, you will be sent to the 'user home' of your Linux VM. That is also the default location you will be in when you open your Ubuntu app. You actually want to do all of your business inside of your normal Windows file space, not your Linux VM file space. So, you will need to know how to navigate in your terminal from your Ubuntu file system to your Windows file system. This is pretty simple if you understand how the system is set up, so let's go over that quickly. 
+Your terminal is actually accessing an Ubuntu Virtual Machine which is running inside of your Windows OS. If you ever ```cd``` in your terminal, you will be sent to the 'user home' of your Linux VM. That is also the default location you will be in when you open your Ubuntu app. You actually want to do all of your business inside of your normal Windows file space, not your Linux VM file space. So, you will need to know how to navigate in your terminal from your Ubuntu file system to your Windows file system. This is pretty simple if you understand how the system is set up, so let's go over that quickly.
 
-To allow you to access the functionality of a Linux machine, Windows stores the Ubuntu OS and file system inside of its own file system. You should NEVER access your Ubuntu files via your Windows machine. What you SHOULD do is save everything you are working on in your normal Windows filespace, and access that via your Ubuntu terminal. So, how do you do that? Well, from the Ubuntu's point of view, it is just a normal Linux machine, but Microsoft has made a pathway between the Linux VM and your Windows OS via the `/mnt` directory in your Ubuntu's root. 
+To allow you to access the functionality of a Linux machine, Windows stores the Ubuntu OS and file system inside of its own file system. You should NEVER access your Ubuntu files via your Windows machine. What you SHOULD do is save everything you are working on in your normal Windows filespace, and access that via your Ubuntu terminal. So, how do you do that? Well, from the Ubuntu's point of view, it is just a normal Linux machine, but Microsoft has made a pathway between the Linux VM and your Windows OS via the `/mnt` directory in your Ubuntu's root.
 
 Here is a quick visual of what the first few levels of any Linux filesystem look like:  
 ![linux file system](./assets/linux_fs.png)
@@ -212,12 +217,12 @@ As you can see, the `mnt` directory is made for other filesystems, so that is wh
 
 ![linux file system](./assets/linux_fs_path.png)
 
-So, you can get there from your starting point by typing: 
+So, you can get there from your starting point by typing:
 
 ```
 cd /mnt/c/users/your_windows_username
 ```
-or 
+or
 ```
 cd ../../mnt/c/users/your_windows_username
 ```
@@ -269,7 +274,7 @@ mkdir flatiron
 cd flatiron
 mkdir labs
 ```
-Now you have the directories you need, and you should have seen yourself navigating down your new file tree as you made each new directory and then `cd`'d into it. 
+Now you have the directories you need, and you should have seen yourself navigating down your new file tree as you made each new directory and then `cd`'d into it.
 
 
 Now, `learn open` should work seamlessly by adding your most current lab to the `labs` directory we just made.
@@ -283,7 +288,7 @@ at any time in your terminal and you will be taken to your `labs`  directory. Gi
 
 ## Phantomjs
 
-In the Javascript section of the Flatiron curriculum, some tests require phantomjs. If you run across an error related to phantomjs, do the following: 
+In the Javascript section of the Flatiron curriculum, some tests require phantomjs. If you run across an error related to phantomjs, do the following:
 
 ```bash
 sudo apt-get update
@@ -315,7 +320,7 @@ phantomjs --version
     \q
     ```
 
-3) There are a few ways to do the next few steps but the easiest way is to use pgAdmin. Open up pgAdmin, which is a Graphical User Interface for PostgreSQL. 
+3) There are a few ways to do the next few steps but the easiest way is to use pgAdmin. Open up pgAdmin, which is a Graphical User Interface for PostgreSQL.
 
 ![PGAdmin in start](./assets/pgadmin-start.png)
 
@@ -336,7 +341,7 @@ phantomjs --version
   **EXAMPLE: CONNECTING YOUR POSTGRESQL SERVER TO YOUR RAILS APP**
 
   - Make sure your server is connected and roles are configured as described above.
-  - Make sure you are in a suitable directory (in your Windows file system space) and create a Rails app configured to use PostgreSQL: 
+  - Make sure you are in a suitable directory (in your Windows file system space) and create a Rails app configured to use PostgreSQL:
     ```
     rails new my-first-app --database=postgresql
     ```    
@@ -348,7 +353,7 @@ phantomjs --version
     user: your-postgres-username
     password: your-postgres-usernames-password
     ```
-- We can now test our database and rails interoperability by first setting up some architecture in our app: 
+- We can now test our database and rails interoperability by first setting up some architecture in our app:
 
     ```
     rails g scaffold Post title:string body:text
@@ -387,7 +392,7 @@ If you get the error: `Windows Subsystem for Linux has no installed distribution
 ![find services ](./assets/find_services.png)
 
 2. Scroll down to the `L` section, and find `LxssManager`. If it is running, right click and `Restart` it. If it is not running, right click it and `Start` it.  
-   
+
 
 ![Lxss Manager](./assets/lxss_manager.png)
 
