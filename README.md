@@ -1,8 +1,8 @@
 # Setting up Windows Subsystem for Linux for Development
 
-*It is no longer necessary to enable developer mode for Windows Subsystem Linux to work.*  
+*You must be running Windows 10 to perform this procedure.* If you are using a different operating system, check [When should I set up a local environment](https://help.learn.co/en/articles/1394611-when-should-i-set-up-a-local-environment) to find out what setup instructions you should follow.
 
-*You must be running Windows 10 to perform this procedure*
+*Note: It is no longer necessary to enable developer mode for Windows Subsystem Linux to work.*  
 
 ## Getting Windows Ready
 
