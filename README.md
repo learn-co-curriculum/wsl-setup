@@ -134,7 +134,7 @@ Note: if you get an error at this step, see FAQ below.
       ```
     - Then, reload bash profile into current session:
       ```
-      source ~./bashrc
+      source ~/.bashrc
       ```
     - Next, install NodeJS:
       ```
