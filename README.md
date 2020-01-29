@@ -13,29 +13,29 @@
 
     b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:    
 
- ![toggle windows features](./assets/turn-windows-features-on-or-off.png)    
+ ![toggle windows features](./turn-windows-features-on-or-off.png)    
 
 
    c.  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!    
 
 
-   ![wsl checkbox](./assets/wsl-turnon.png)  
+   ![wsl checkbox](./wsl-turnon.png)  
 
 
 2)  **Restart your computer**
 3)  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
-   ![windows version](./assets/windows-version.png)
+   ![windows version](./windows-version.png)
 4)  Open up Microsoft Store. Search for "Ubuntu"
     1) Choose "Ubuntu" (not 16.04 LTS or 18.04 LTS)  
 
 
-![ubuntu choice in microsoft store](./assets/ubuntu-choice.png)    
+![ubuntu choice in microsoft store](./ubuntu-choice.png)    
 
 5) If you run into errors or if you have an early version of Windows 10, see further information  [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
 
 6) Open up the Ubuntu app. Follow the prompts, which will include making a username and password. Don't forget your password!  
 
-   ![open ubuntu](./assets/open-ubuntu.png)  
+   ![open ubuntu](./open-ubuntu.png)  
 
 
 Note: if you get an error at this step, see FAQ below.
@@ -157,19 +157,19 @@ You can use any editor you want, but I am going to be walking through setting up
     - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
     - begin typing the following: `Terminal: Select Default Shell`  until you see it. Select that option.
 
-    ![command palette](./assets/default-shell.png)  
+    ![command palette](./default-shell.png)  
 
     - Once you select it, a few options will pop up. You want to select WSL
 
-    ![WSL Terminal](./assets/wsl-bash-selection.png)
+    ![WSL Terminal](./wsl-bash-selection.png)
 16) Now, you can use your Ubuntu terminal in VSCode. Select "New Terminal" in the "Terminal" drop-down, or type `Ctrl`+`Shift`+` in order to use it!
 
 17) Additional User Settings *(OPTIONAL)*:
     - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting.
     - To open up user settings, again open up the Command Palette using `F1` or `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
-    ![Preferences - settings](./assets/settings-json.png)
+    ![Preferences - settings](./settings-json.png)
     - You will see a screen like this:
-    ![Preferences - settings](./assets/user-settings.png)
+    ![Preferences - settings](./user-settings.png)
     - to have your erb files treated like html, add the following to your user settings (circled above):
         ```
         "emmet.includeLanguages": {
@@ -211,11 +211,11 @@ Your terminal is actually accessing an Ubuntu Virtual Machine which is running i
 To allow you to access the functionality of a Linux machine, Windows stores the Ubuntu OS and file system inside of its own file system. You should NEVER access your Ubuntu files via your Windows machine. What you SHOULD do is save everything you are working on in your normal Windows filespace, and access that via your Ubuntu terminal. So, how do you do that? Well, from the Ubuntu's point of view, it is just a normal Linux machine, but Microsoft has made a pathway between the Linux VM and your Windows OS via the `/mnt` directory in your Ubuntu's root.
 
 Here is a quick visual of what the first few levels of any Linux filesystem look like:  
-![linux file system](./assets/linux_fs.png)
+![linux file system](./linux_fs.png)
 
 As you can see, the `mnt` directory is made for other filesystems, so that is where Microsoft connected your Linux to your Windows machine:
 
-![linux file system](./assets/linux_fs_path.png)
+![linux file system](./linux_fs_path.png)
 
 So, you can get there from your starting point by typing:
 
@@ -322,21 +322,21 @@ phantomjs --version
 
 3) There are a few ways to do the next few steps but the easiest way is to use pgAdmin. Open up pgAdmin, which is a Graphical User Interface for PostgreSQL.
 
-![PGAdmin in start](./assets/pgadmin-start.png)
+![PGAdmin in start](./pgadmin-start.png)
 
  - This should open up pgAdmin in your browser. Start a server by right-clicking "PostgreSQL" and selecting "Connect Server"
 
-![PostgreSQL selection](./assets/start-server.png)
-![PostgreSQL connect](./assets/connect-server.png)
+![PostgreSQL selection](./start-server.png)
+![PostgreSQL connect](./connect-server.png)
 
  - Enter the password you defined during the download
  - Your PostgreSQL server is running, and can now be integrated into your projects.
  - You also want to set up a new user/role and password that you want to use with your rails app. Ensure you give your user/role all available permissions during setup.
     - During setup, ensure to fill out `Name` in the `General` tab, `Password` in the `Definition` tab, and enable all permissions in the `Privileges` tab.
 
-![create user](./assets/pgadmin-create-user.png)  
+![create user](./pgadmin-create-user.png)  
 
-![create user permissions](./assets/create-user-permissions.png)
+![create user permissions](./create-user-permissions.png)
 
   **EXAMPLE: CONNECTING YOUR POSTGRESQL SERVER TO YOUR RAILS APP**
 
@@ -372,12 +372,12 @@ phantomjs --version
     rails s
     ```
 - If you navigate to `localhost:3000` you should see that we are on Rails!  
-  ![on Rails](./assets/on-rails.png)
+  ![on Rails](./on-rails.png)
 - Let's test our database by going to 'localhost:3000/posts'   
-  ![posts](./assets/posts.png)
+  ![posts](./posts.png)
 - Now just follow the crud links and try to make a post! We should be seeing our database working great with our rails app!
 
-![database works](./assets/database-works.png)
+![database works](./database-works.png)
 
 - Hopefully, everything is working for you! Now you're ready to develop using WSL!
 
@@ -389,12 +389,12 @@ If you get the error: `Windows Subsystem for Linux has no installed distribution
 
 1. Search for 'Services' in your Windows search bar, open it up  
 
-![find services ](./assets/find_services.png)
+![find services ](./find_services.png)
 
 2. Scroll down to the `L` section, and find `LxssManager`. If it is running, right click and `Restart` it. If it is not running, right click it and `Start` it.  
 
 
-![Lxss Manager](./assets/lxss_manager.png)
+![Lxss Manager](./lxss_manager.png)
 
 [You can check out the github issue here](https://github.com/Microsoft/WSL/issues/2576)
 
