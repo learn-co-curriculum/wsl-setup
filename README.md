@@ -10,7 +10,6 @@
 
     a. Go to your Windows Search bar and type in `turn windows features on or off`  
 
-
     b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:    
 
  ![toggle windows features](https://curriculum-content.s3.amazonaws.com/setup-instructions/turn-windows-features-on-or-off.png)    
@@ -23,8 +22,11 @@
 
 
 2)  **Restart your computer**
+
 3)  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
+
    ![windows version](https://curriculum-content.s3.amazonaws.com/setup-instructions/windows-version.png)
+
 4)  Open up Microsoft Store. Search for "Ubuntu"
     1) Choose "Ubuntu" (not 16.04 LTS or 18.04 LTS)  
 
@@ -45,105 +47,122 @@ Note: if you get an error at this step, see FAQ below.
 7) Once everything is set up, we can start setting up our system! Start off by running the following to download our dependencies:
 
 
-    ```
-    sudo apt-get update  
-    ```
-    ```
-    sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev libpq-dev libgdbm-dev libncurses5-dev automake libtool bison gnupg postgresql postgresql-contrib
-    ```
+  ```
+  sudo apt-get update  
+  ```
+
+  ```
+  sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev libpq-dev libgdbm-dev libncurses5-dev automake libtool bison gnupg postgresql postgresql-contrib
+  ```
+
 8) Install RVM by running:
 
-    ```
-    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    ```
-    > __Note:__ There are two possible errors you may see at this point. Follow the appropriate instructions below:
+  ```
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  ```
 
-    > **(A) If** the previous command does not work the first time (with the error `keyserver receive failed: No dirmngr` and/or `IPC connect call failed`, try running it again.
-    >  If the second time works, you should see public keys imported by Piotr Kuczynski and Michal Papis. You can now continue with the procedure and disregard the rest of the instructions in this shaded area.
-    >  If the command still does not work (you still get the same errors as the first attempt), then perform the following:
-    >
-    > ```
-    > sudo apt-get install gnupg2 -y
-    > gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    > ```
-    >
-    > **(B) If** the original error you get is `[gpg] keyserver receive failed: Server indicated a failure`, run the following command (following the instructions above if you get the error above):
-    > ```
-    > gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    > ```
+  > __Note:__ There are two possible errors you may see at this point. Follow the appropriate instructions below:
 
-    Once you have successfully run either the `gpg` or the `gpg2` command above, run the following:
+  > **(A) If** the previous command does not work the first time (with the error `keyserver receive failed: No dirmngr` and/or `IPC connect call failed`, try running it again.
+  >  If the second time works, you should see public keys imported by Piotr Kuczynski and Michal Papis. You can now continue with the procedure and disregard the rest of the instructions in this shaded area.
+  >  If the command still does not work (you still get the same errors as the first attempt), then perform the following:
+  >
+  > ```
+  > sudo apt-get install gnupg2 -y
+  > gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  > ```
+  >
+  > **(B) If** the original error you get is `[gpg] keyserver receive failed: Server indicated a failure`, run the following command (following the instructions above if you get the error above):
+  > ```
+  > gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  > ```
 
-    ```
-    \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    ```
-    and finally
+  Once you have successfully run either the `gpg` or the `gpg2` command above, run the following:
 
-    ```
-    source ~/.rvm/scripts/rvm
-    ```
+  ```
+  \curl -sSL https://get.rvm.io | bash -s stable --ruby
+  ```
+  
+  and finally
+
+  ```
+  source ~/.rvm/scripts/rvm
+  ```
 
 9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.6.1 and set it as our default:
 
-    ```
-    rvm install 2.6.1
-    rvm use 2.6.1 --default
-    ```
+  ```
+  rvm install 2.6.1
+  rvm use 2.6.1 --default
+  ```
 
 10)  Let's install the bundler gem:  
 
-        ```
-        gem install bundler
-        ```
+  ```
+  gem install bundler
+  ```
+
 11) And set up git:
 
-    ```
-    git config --global color.ui true
-    ```
-    For the next few commands, make sure to input your specific information:
+  ```
+  git config --global color.ui true
+  ```
 
-    ```
-    git config --global user.name "your_name"
-    ```
+  For the next few commands, make sure to input your specific information:
 
-    ```
-    git config --global user.email "your_email@example.com"
-    ```
-    You can either communicate with your remote repositories via HTTPS or SSH. If you want to use SSH (which means you will not have to authenticate with your GitHub username and password before each push) - [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+  ```
+  git config --global user.name "your_name"
+  ```
+
+  ```
+  git config --global user.email "your_email@example.com"
+  ```
+
+  You can either communicate with your remote repositories via HTTPS or SSH. If you want to use SSH (which means you will not have to authenticate with your GitHub username and password before each push) - [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
 12) Now we can get set up with the learn-co gem. This will allow you to use commands like `learn`, `learn submit`, and `learn open`.
 
-    ```
-    gem install learn-co
-    ```
-    - In your browser, navigate to learn.co/your_github_username
-    - At the bottom of the page, you should see text that says `OAuth Token:` followed by a token. Copy the token, and then go back to your WSL terminal
-    - Type:  
-        ```
-        learn whoami
-        ```
-    - Paste in your token  
+  ```
+  gem install learn-co
+  ```
+  
+  - In your browser, navigate to learn.co/your_github_username
+  - At the bottom of the page, you should see text that says `OAuth Token:` followed by a token. Copy the token, and then go back to your WSL terminal
+  - Type:
 
-    You should now be fully authenticated with learn.
+      ```
+      learn whoami
+      ```
+
+  - Paste in your token  
+
+  You should now be fully authenticated with learn.
 
 13) Now let's get Node Version Manager, NodeJS, and Rails installed so we can make a bunch of stuff!
 
-    - First, install NVM:
-      ```
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-      ```
-    - Then, reload bash profile into current session:
-      ```
-      source ~/.bashrc
-      ```
-    - Next, install NodeJS:
-      ```
-      nvm install node
-      ```
-    - Now, Ruby on Rails:
-      ```
-      gem install rails
-      ```
+  - First, install NVM:
+
+    ```
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    ```
+  
+  - Then, reload bash profile into current session:
+
+    ```
+    source ~/.bashrc
+    ```
+  
+  - Next, install NodeJS:
+
+    ```
+    nvm install node
+    ```
+  
+  - Now, Ruby on Rails:
+
+    ```
+    gem install rails
+    ```
 
 ## Choose your programming editor: VSCode
 
@@ -153,46 +172,55 @@ You can use any editor you want, but I am going to be walking through setting up
 
 15) To configure your Ubuntu terminal to be available in VSCode:
 
-    - open up VSCode
-    - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
-    - begin typing the following: `Terminal: Select Default Shell`  until you see it. Select that option.
+  - open up VSCode
+  - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
+  - begin typing the following: `Terminal: Select Default Shell`  until you see it. Select that option.
 
-    ![command palette](https://curriculum-content.s3.amazonaws.com/setup-instructions/default-shell.png)  
+  ![command palette](https://curriculum-content.s3.amazonaws.com/setup-instructions/default-shell.png)  
 
-    - Once you select it, a few options will pop up. You want to select WSL
+   - Once you select it, a few options will pop up. You want to select WSL
 
-    ![WSL Terminal](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-bash-selection.png)
+  ![WSL Terminal](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-bash-selection.png)
+
 16) Now, you can use your Ubuntu terminal in VSCode. Select "New Terminal" in the "Terminal" drop-down, or type `Ctrl`+`Shift`+` in order to use it!
 
 17) Additional User Settings *(OPTIONAL)*:
-    - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting.
-    - To open up user settings, again open up the Command Palette using `F1` or `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
-    ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/settings-json.png)
-    - You will see a screen like this:
-    ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/user-settings.png)
-    - to have your erb files treated like html, add the following to your user settings (circled above):
-        ```
-        "emmet.includeLanguages": {
-            "erb": "html"
-        }
-        ```
-    - some optional personal preferences that I like:
-        ```
-        "window.zoomLevel": -1,
-        "editor.acceptSuggestionOnEnter": "off",
-        "editor.fontSize": 11,
-        "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
-         ```
-    - Note that for the Hack font to be usable, you have to downlload it. You can check it out [here](https://sourcefoundry.org/hack/).
+  - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting.
+  - To open up user settings, again open up the Command Palette using `F1` or `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
+
+  ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/settings-json.png)
+    
+  - You will see a screen like this:
+
+  ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/user-settings.png)
+
+  - To have your erb files treated like html, add the following to your user settings (circled above):
+      
+      ```
+      "emmet.includeLanguages": {
+          "erb": "html"
+      }
+      ```
+
+  - Some optional personal preferences that I like:
+
+      ```
+      "window.zoomLevel": -1,
+      "editor.acceptSuggestionOnEnter": "off",
+      "editor.fontSize": 11,
+      "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
+      ```
+         
+  - Note that for the Hack font to be usable, you have to download it. You can check it out [here](https://sourcefoundry.org/hack/).
 
 18) Update your .learn-config
-    - Travel to your Linux home directory by typing `cd`, you can change your .learn-config by typing:
+  - Travel to your Linux home directory by typing `cd`, you can change your .learn-config by typing:
 
     ```
     nano .learn-config
     ```
 
-    - and customizing where you want the ```learn open``` command to save labs, and setting your editor to VSCode. Here's what it should look like:
+  - and customizing where you want the ```learn open``` command to save labs, and setting your editor to VSCode. Here's what it should look like:
 
     ```
     ---
@@ -200,9 +228,9 @@ You can use any editor you want, but I am going to be walking through setting up
     :editor: code
     ```
 
-    - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter` to save your changes.
+  - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter` to save your changes.
 
-    - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources.
+  - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources.
 
 ## Important Knowledge: Basic Use
 
@@ -312,13 +340,15 @@ phantomjs --version
 1) First, we want to [Download PostgreSQL for Windows](https://www.postgresql.org/download/windows/) - download the Interactive Installer.
 2) Once everything is downloaded and installed, you can verify proper operation by typing in your terminal
 
-    ```
-    psql -p 5432 -h localhost -U postgres
-    ```
-    once connection is verified, you can quit by typing
-    ```
-    \q
-    ```
+  ```
+  psql -p 5432 -h localhost -U postgres
+  ```
+
+  once connection is verified, you can quit by typing
+  
+  ```
+  \q
+  ```
 
 3) There are a few ways to do the next few steps but the easiest way is to use pgAdmin. Open up pgAdmin, which is a Graphical User Interface for PostgreSQL.
 
