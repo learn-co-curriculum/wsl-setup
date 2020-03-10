@@ -235,7 +235,9 @@ code .
 
 ## Adding A Flatiron Customization To Your Terminal
 
-Start out by making a backup for your `.bashrc`
+Start out by ensuring you're back in the Linux home directory, with `cd ~` or just `cd`.
+
+Then, make a backup for your `.bashrc`
 
 ```
 mv .bashrc .bashrc.bak
