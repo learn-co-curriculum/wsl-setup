@@ -6,20 +6,29 @@
 
 ## Getting Windows Ready
 
-1) Windows Subsystem Linux (WSL) is **not** automatically enabled on windows. So, to start off, we need to enable it!    
+1) Windows Subsystem Linux (WSL) is **not** automatically enabled on windows. So, to start off, we need to enable it!
 
     a. Go to your Windows Search bar and type in `turn windows features on or off`  
 
-    b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:    
+    b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:
 
- ![toggle windows features](https://curriculum-content.s3.amazonaws.com/setup-instructions/turn-windows-features-on-or-off.png)    
+   ![toggle windows features](https://curriculum-content.s3.amazonaws.com/setup-instructions/turn-windows-features-on-or-off.png)
 
-
-   c.  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!    
-
+   c. Scroll down until you see "Windows Subsystem for Linux" - ensure its box
+   is checked!
 
    ![wsl checkbox](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-turnon.png)  
 
+   d. Scroll up a bit until you see "Virtual Machine Platform." Turn this
+   feature on as well.
+
+   ![virtual machine platform checkbox](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-virtual-machine-platform.png)  
+
+   > **Note:** The "Virtual Machine Platform" was added in a February 2020
+   > update to Windows. If your computer has not received this update, this
+   > feature may not be available. In this case, just make sure "Windows
+   > Subsystem for Linux" is enabled and continue on. Keep in mind that if you
+   > update, you may need to go back and enable this feature.
 
 2)  **Restart your computer**
 
