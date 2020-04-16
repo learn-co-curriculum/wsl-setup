@@ -135,7 +135,9 @@ Note: if you get an error at this step, see FAQ below.
   gem install learn-co
   ```
   
-  - In your browser, navigate to learn.co/your_github_username
+  - In your browser:
+    - If you have connected your Github account to your Learn account, navigate to learn.co/your_github_username
+    - If you have not connected your Github account: Go to [your profile](https://learn.co/account/profile) > Learn Settings > Public Profile. Click on the link under **Username**
   - At the bottom of the page, you should see text that says `OAuth Token:` followed by a token. Copy the token, and then go back to your WSL terminal
   - Type:
 
