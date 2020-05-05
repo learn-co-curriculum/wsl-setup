@@ -225,6 +225,8 @@ You can use any editor you want, but I am going to be walking through setting up
   - Note that for the Hack font to be usable, you have to download it. You can check it out [here](https://sourcefoundry.org/hack/).
 
 18) Update your .learn-config
+  - Open the wsl terminal by running the command `wsl`.  You can do type this in the Windows search bar or by pressing Windows key and 'R' (for run), and entering 'wsl'.
+  
   - Travel to your Linux home directory by typing `cd`, you can change your .learn-config by typing:
 
     ```
