@@ -57,7 +57,6 @@ Note: if you get an error at this step, see FAQ below.
     sudo apt-get update
     sudo apt-get install rvm
     ```
-
     and finally
 
     ```
@@ -73,9 +72,10 @@ Note: if you get an error at this step, see FAQ below.
 
 10)  Let's install the bundler gem:  
 
-        ```
-        gem install bundler
-        ```
+    ```
+    gem install bundler
+    ```
+    
 11) And set up git:
 
     ```
