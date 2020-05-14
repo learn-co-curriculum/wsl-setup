@@ -8,20 +8,22 @@ _Note: It is no longer necessary to enable developer mode for Windows Subsystem 
 
 1. Windows Subsystem Linux (WSL) is **not** automatically enabled on windows. So, to start off, we need to enable it!
 
+
    a. Go to your Windows Search bar and type in `turn windows features on or off`
-
-
-    b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:
-
-![toggle windows features](https://curriculum-content.s3.amazonaws.com/setup-instructions/turn-windows-features-on-or-off.png)
-
-c. Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!
-
-![wsl checkbox](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-turnon.png)
+   
+   b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:
+   
+   ![toggle windows features](https://curriculum-content.s3.amazonaws.com/setup-instructions/turn-windows-features-on-or-off.png)
+   
+   c. Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!
+   
+   ![wsl checkbox](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-turnon.png)
 
 2.  **Restart your computer**
+
 3.  Check your Windows 10 version by going to `System Information` and checking your Version. If your build is earlier than 16215, skip step 4 and proceed to step 5.  
     ![windows version](https://curriculum-content.s3.amazonaws.com/setup-instructions/windows-version.png)
+    
 4.  Open up Microsoft Store. Search for "Ubuntu"
     1. Choose "Ubuntu" (not 16.04 LTS or 18.04 LTS)
 
@@ -38,6 +40,7 @@ Note: if you get an error at this step, see FAQ below.
 ## Start Outfitting your new Linux Subsystem: RVM / Ruby, learn-co, git, NodeJS, and Rails
 
 7. Once everything is set up, we can start setting up our system! Start off by running the following to download our dependencies:
+
 
 
     ```
@@ -64,63 +67,73 @@ Note: if you get an error at this step, see FAQ below.
 
 10. Let's install the bundler gem:
 
-
     ```
     gem install bundler
     ```
 
 11. And set up git:
 
-    ```
-    git config --global color.ui true
-    ```
+  ```
+  git config --global color.ui true
+  ```
 
-    For the next few commands, make sure to input your specific information:
+  For the next few commands, make sure to input your specific information:
 
-    ```
-    git config --global user.name "your_name"
-    ```
+  ```
+  git config --global user.name "your_name"
+  ```
 
-    ```
-    git config --global user.email "your_email@example.com"
-    ```
+  ```
+  git config --global user.email "your_email@example.com"
+  ```
 
-    You can either communicate with your remote repositories via HTTPS or SSH. If you want to use SSH (which means you will not have to authenticate with your GitHub username and password before each push) - [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+  You can either communicate with your remote repositories via HTTPS or SSH. If you want to use SSH (which means you will not have to authenticate with your GitHub username and password before each push) - [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
-12. Now we can get set up with the learn-co gem. This will allow you to use commands like `learn`, `learn submit`, and `learn open`.
+12) Now we can get set up with the learn-co gem. This will allow you to use commands like `learn`, `learn submit`, and `learn open`.
 
-    ```
-    gem install learn-co
-    ```
+  ```
+  gem install learn-co
+  ```
+  
+  - In your browser:
+    - If you have connected your Github account to your Learn account, navigate to learn.co/your_github_username
+    - If you have not connected your Github account: Go to [your profile](https://learn.co/account/profile) > Learn Settings > Public Profile. Click on the link under **Username**
+  - At the bottom of the page, you should see text that says `OAuth Token:` followed by a token. Copy the token, and then go back to your WSL terminal
+  - Type:
 
-    - In your browser, navigate to learn.co/your_github_username
-    - At the bottom of the page, you should see text that says `OAuth Token:` followed by a token. Copy the token, and then go back to your WSL terminal
-    - Type:
       ```
       learn whoami
       ```
-    - Paste in your token
 
-    You should now be fully authenticated with learn.
+  - Paste in your token  
 
-13. Now let's get Node Version Manager, NodeJS, and Rails installed so we can make a bunch of stuff!
+  You should now be fully authenticated with learn.
 
-    - First, install NVM:
-      ```
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-      ```
-    - Then, reload bash profile into current session:
-      ```
-      source ~/.bashrc
-      ```
-    - Next, install NodeJS:
-      ```
-      nvm install node
-      ```
-    - Now, Ruby on Rails:
-      ```
-      gem install rails
-      ```
+13) Now let's get Node Version Manager, NodeJS, and Rails installed so we can make a bunch of stuff!
+
+  - First, install NVM:
+
+    ```
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    ```
+
+  - Then, reload bash profile into current session:
+
+    ```
+    source ~/.bashrc
+    ```
+  
+  - Next, install NodeJS:
+
+    ```
+    nvm install node
+    ```
+    
+  - Now, Ruby on Rails:
+
+    ```
+    gem install rails
+    ```
 
 ## Choose your programming editor: VSCode
 
@@ -136,7 +149,10 @@ You can use any editor you want, but I am going to be walking through setting up
 
     ![command palette](https://curriculum-content.s3.amazonaws.com/setup-instructions/default-shell.png)
 
-    - Once you select it, a few options will pop up. You want to select WSL
+   - Once you select it, a few options will pop up. You want to select WSL
+
+  ![WSL Terminal](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-bash-selection.png)
+
 
     ![WSL Terminal](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-bash-selection.png)
 
@@ -150,11 +166,14 @@ You can use any editor you want, but I am going to be walking through setting up
     - You will see a screen like this:
       ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/user-settings.png)
     - to have your erb files treated like html, add the following to your user settings (circled above):
+
       ```
       "emmet.includeLanguages": {
           "erb": "html"
       }
       ```
+      
+
     - some optional personal preferences that I like:
       ```
       "window.zoomLevel": -1,
@@ -162,6 +181,7 @@ You can use any editor you want, but I am going to be walking through setting up
       "editor.fontSize": 11,
       "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
       ```
+
     - Note that for the Hack font to be usable, you have to download it. You can check it out [here](https://sourcefoundry.org/hack/).
 
 18. Update your .learn-config
@@ -180,9 +200,9 @@ You can use any editor you want, but I am going to be walking through setting up
     :editor: code
     ```
 
-    - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter` to save your changes.
+  - You save a file you have modified in `nano` by following the directions at the bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter` to save your changes.
 
-    - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources.
+  - If you feel uncomfortable with these commands, check out the basic Linux commands link below in the resources.
 
 ## Important Knowledge: Basic Use
 
@@ -219,7 +239,9 @@ code .
 
 ## Adding A Flatiron Customization To Your Terminal
 
-Start out by making a backup for your `.bashrc`
+Start out by ensuring you're back in the Linux home directory, with `cd ~` or just `cd`.
+
+Then, make a backup for your `.bashrc`
 
 ```
 mv .bashrc .bashrc.bak
