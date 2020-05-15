@@ -54,47 +54,33 @@
     sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev libpq-dev libgdbm-dev libncurses5-dev automake libtool bison gnupg postgresql postgresql-contrib
     ```
 
-8) Install RVM by running:
+8) Next, we'll install the Ruby Version Manager, also known as RVM. To start, we
+   need to get some security keys. Run the following command to do so:
 
     ```sh
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     ```
 
-    > **Note:** There are two possible errors you may see at this point. Follow
-    > the appropriate instructions below:
-    > **(A) If** the previous command does not work the first time (with the error `keyserver receive failed: No dirmngr` and/or `IPC connect call failed`, try running it again.
-    >  If the second time works, you should see public keys imported by Piotr Kuczynski and Michal Papis. You can now continue with the procedure and disregard the rest of the instructions in this shaded area.
-    >  If the command still does not work (you still get the same errors as the first attempt), then perform the following:
-    >
-    > ```sh
-    > sudo apt-get install gnupg2 -y
-    > gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    > ```
-    >
-    > **(B) If** the original error you get is `[gpg] keyserver receive failed:
-    > Server indicated a failure`, run the following command (following the
-    > instructions above if you get the error above):
-    >
-    > ```sh
-    > gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    > ```
+> **Note:** If you receive an error after running the command above, try to
+> continue on with the next set of commands. If you are unable to install RVM,
+> visit [RVM's Security page][] for additional options for getting these
+> security keys.
 
-    Once you have successfully run either the `gpg` or the `gpg2` command above, run the following:
+[RVM's Security page]: http://rvm.io/rvm/security
+
+Once you have the security keys, run the following:
+
+```sh
+sudo apt-add-repository -y ppa:rael-gc/rvm
+sudo apt-get update
+sudo apt-get install rvm
+```
+
+9) Next, to set up a ruby version most compatible with Learn.co labs, we want to
+   download ruby 2.6.1 and set it as our default:
 
     ```sh
-    \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    ```
-
-    and finally
-
-    ```sh
-    source ~/.rvm/scripts/rvm
-    ```
-
-9) Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.6.1 and set it as our default:
-
-    ```sh
-    rvm install 2.6.1
+    rvm install "ruby-2.6.1"
     rvm use 2.6.1 --default
     ```
 
