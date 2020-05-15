@@ -374,6 +374,14 @@ labs
 at any time in your terminal and you will be taken to your `labs`  directory.
 Give it a try!
 
+> **Note:** If the `labs` command is not working, try running `learn directory`.
+> You will be prompted to re-enter the location where you would like your labs
+> to be stored. Do not use the provided default. Instead, the path should be:
+>
+> ```sh
+> /mnt/c/users/<your_ubuntu_username>/dev/flatiron/labs
+> ```
+
 ## Advanced topics: PostgreSQL setup (OPTIONAL)
 
 **Setting up PostgreSQL allows simple production-level database integration into
