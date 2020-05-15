@@ -162,7 +162,8 @@ sudo apt-get install rvm
 
 ## Choose your programming editor: VSCode
 
-You can use any editor you want, but I am going to be walking through setting up VSCode.
+You can use any editor you want, but I am going to be walking through setting up
+VSCode.
 
 14) [Download VSCode here][VS Code]. Choose the Windows download, not the Linux
     download. Any required Linux downloads will be done via the Ubuntu terminal,
@@ -215,7 +216,7 @@ You can use any editor you want, but I am going to be walking through setting up
         "editor.acceptSuggestionOnEnter": "off",
         "editor.fontSize": 11,
         "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
-         ```
+        ```
 
     - Note that for the Hack font to be usable, you have to downlload it. You
       can check it out [here][Hack font].
@@ -229,7 +230,7 @@ You can use any editor you want, but I am going to be walking through setting up
     nano .learn-config
     ```
 
-    - and customizing where you want the ```learn open``` command to save labs,
+    - and customizing where you want the `learn open` command to save labs,
       and setting your editor to VSCode. Here's what it should look like:
 
     ```sh
@@ -248,7 +249,7 @@ You can use any editor you want, but I am going to be walking through setting up
 ## Important Knowledge: Basic Use
 
 Your terminal is actually accessing an Ubuntu Virtual Machine which is running
-inside of your Windows OS. If you ever ```cd``` in your terminal, you will be
+inside of your Windows OS. If you ever `cd` in your terminal, you will be
 sent to the 'user home' of your Linux VM. That is also the default location you
 will be in when you open your Ubuntu app. You actually want to do all of your
 business inside of your normal Windows file space, not your Linux VM file space.
@@ -389,9 +390,11 @@ phantomjs --version
 
 ## Advanced topics: PostgreSQL setup (OPTIONAL)
 
-**Setting up PostgreSQL allows simple production-level database integration into a Rails project. This allows easy hosting on Heroku with only a little setup.**
+**Setting up PostgreSQL allows simple production-level database integration into
+a Rails project. This allows easy hosting on Heroku with only a little setup.**
 
-1) First, we want to [Download PostgreSQL for Windows](https://www.postgresql.org/download/windows/) - download the Interactive Installer.
+1) First, we want to [Download PostgreSQL for Windows][] - download the
+   Interactive Installer.
 2) Once everything is downloaded and installed, you can verify proper operation
    by typing in your terminal
 
@@ -410,7 +413,8 @@ phantomjs --version
 
 ![PGAdmin in start](https://curriculum-content.s3.amazonaws.com/setup-instructions/pgadmin-start.png)
 
-- This should open up pgAdmin in your browser. Start a server by right-clicking "PostgreSQL" and selecting "Connect Server"
+- This should open up pgAdmin in your browser. Start a server by right-clicking
+  "PostgreSQL" and selecting "Connect Server"
 
 ![PostgreSQL selection](https://curriculum-content.s3.amazonaws.com/setup-instructions/start-server.png)
 ![PostgreSQL connect](https://curriculum-content.s3.amazonaws.com/setup-instructions/connect-server.png)
@@ -420,9 +424,8 @@ phantomjs --version
 - You also want to set up a new user/role and password that you want to use with
   your rails app. Ensure you give your user/role all available permissions
   during setup.
-    - During setup, ensure to fill out `Name` in the `General` tab, `Password`
-      in the `Definition` tab, and enable all permissions in the `Privileges`
-      tab.
+  - During setup, ensure to fill out `Name` in the `General` tab, `Password` in
+      the `Definition` tab, and enable all permissions in the `Privileges` tab.
 
 ![create user](https://curriculum-content.s3.amazonaws.com/setup-instructions/pgadmin-create-user.png)  
 
@@ -480,7 +483,8 @@ space) and create a Rails app configured to use PostgreSQL:
 
   ![posts](https://curriculum-content.s3.amazonaws.com/setup-instructions/posts.png)
 
-- Now just follow the crud links and try to make a post! We should be seeing our database working great with our rails app!
+- Now just follow the crud links and try to make a post! We should be seeing our
+  database working great with our rails app!
 
 ![database works](https://curriculum-content.s3.amazonaws.com/setup-instructions/database-works.png)
 
@@ -517,3 +521,4 @@ https://aka.ms/wslstore Press any key to continue...`
 [VS Code]: https://code.visualstudio.com/download
 [WSL Installation Guide]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 [Hack font]: https://sourcefoundry.org/hack/
+[Download PostgreSQL for Windows]: https://www.postgresql.org/download/windows/
