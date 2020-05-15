@@ -379,7 +379,7 @@ Give it a try!
 > to be stored. Do not use the provided default. Instead, the path should be:
 >
 > ```sh
-> /mnt/c/users/<your_ubuntu_username>/dev/flatiron/labs
+> /mnt/c/users/<your_windows_username>/dev/flatiron/labs
 > ```
 
 ## Advanced topics: PostgreSQL setup (OPTIONAL)
