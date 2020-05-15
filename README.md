@@ -12,27 +12,27 @@
 
     b.  Click on the result that matches your query. It will be in your Control Panel.  You should see something like this:
 
- ![toggle windows features](https://curriculum-content.s3.amazonaws.com/setup-instructions/turn-windows-features-on-or-off.png)
+    ![toggle windows features](https://curriculum-content.s3.amazonaws.com/setup-instructions/turn-windows-features-on-or-off.png)
 
-   c.  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!
+    c.  Scroll down until you see "Windows Subsystem for Linux" - ensure its box is checked!
 
-   ![wsl checkbox](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-turnon.png)  
+    ![wsl checkbox](https://curriculum-content.s3.amazonaws.com/setup-instructions/wsl-turnon.png)  
 
 2) **Restart your computer**
 3) Check your Windows 10 version by going to `System Information` and checking
     your Version. If your build is earlier than 16215, skip step 4 and proceed
     to step 5.  
 
-   ![windows version](https://curriculum-content.s3.amazonaws.com/setup-instructions/windows-version.png)
+    ![windows version](https://curriculum-content.s3.amazonaws.com/setup-instructions/windows-version.png)
 
-4) Open up Microsoft Store. Search for "Ubuntu"
-    1) Choose "Ubuntu" (not 16.04 LTS or 18.04 LTS)  
+4) Open up Microsoft Store. Search for **Ubuntu**
+    1) Choose **Ubuntu** (not 16.04 LTS or 18.04 LTS)  
 
-![ubuntu choice in microsoft store](https://curriculum-content.s3.amazonaws.com/setup-instructions/ubuntu-choice.png)
+    ![ubuntu choice in microsoft store](https://curriculum-content.s3.amazonaws.com/setup-instructions/ubuntu-choice.png)
 
 5) If you run into errors or if you have an early version of Windows 10, see
    further information
-   [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
+   [here][WSL Installation Guide]
 
 6) Open up the Ubuntu app. Follow the prompts, which will include making a
    username and password. Don't forget your password!  
@@ -123,7 +123,9 @@
     You can either communicate with your remote repositories via HTTPS or SSH.
     If you want to use SSH (which means you will not have to authenticate with
     your GitHub username and password before each push) -
-    [follow these instructions.](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+    [follow these instructions.][new ssh key]
+
+    [new ssh key]: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
 12) Now we can get set up with the learn-co gem. This will allow you to use
     commands like `learn`, `learn submit`, and `learn open`.
@@ -145,7 +147,8 @@
 
     You should now be fully authenticated with learn.
 
-13) Now let's get Node Version Manager, NodeJS, and Rails installed so we can make a bunch of stuff!
+13) Now let's get Node Version Manager, NodeJS, and Rails installed so we can
+    make a bunch of stuff!
 
     - First, install NVM:
 
@@ -175,16 +178,16 @@
 
 You can use any editor you want, but I am going to be walking through setting up VSCode.
 
-14) Download VSCode [here](https://code.visualstudio.com/download). Choose the
-    Windows download, not the Linux download. Any required Linux downloads will
-    be done via the Ubuntu terminal, and everything else should be downloaded
-    for your Windows OS.
+14) [Download VSCode here][VS Code]. Choose the Windows download, not the Linux
+    download. Any required Linux downloads will be done via the Ubuntu terminal,
+    and everything else should be downloaded for your Windows OS.
 
 15) To configure your Ubuntu terminal to be available in VSCode:
 
     - open up VSCode
     - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
-    - begin typing the following: `Terminal: Select Default Shell`  until you see it. Select that option.
+    - begin typing the following: `Terminal: Select Default Shell`  until you
+      see it. Select that option.
 
     ![command palette](https://curriculum-content.s3.amazonaws.com/setup-instructions/default-shell.png)  
 
@@ -197,12 +200,21 @@ You can use any editor you want, but I am going to be walking through setting up
 
 17) Additional User Settings *(OPTIONAL)*:
 
-    - You can add a few things to your User Settings to customize and improve your programming experience. Most importantly, we can make VSCode treat .erb files like .html files, allowing us to use all the same shortcuts and get the same syntax highlighting.
-    - To open up user settings, again open up the Command Palette using `F1` or `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
+    - You can add a few things to your User Settings to customize and improve
+      your programming experience. Most importantly, we can make VSCode treat
+      .erb files like .html files, allowing us to use all the same shortcuts and
+      get the same syntax highlighting.
+    - To open up user settings, again open up the Command Palette using `F1` or
+      `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
+
     ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/settings-json.png)
+
     - You will see a screen like this:
+
     ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/user-settings.png)
-    - to have your erb files treated like html, add the following to your user settings (circled above):
+
+    - to have your erb files treated like html, add the following to your user
+      settings (circled above):
 
         ```sh
         "emmet.includeLanguages": {
@@ -220,12 +232,12 @@ You can use any editor you want, but I am going to be walking through setting up
          ```
 
     - Note that for the Hack font to be usable, you have to downlload it. You
-      can check it out [here](https://sourcefoundry.org/hack/).
+      can check it out [here][Hack font].
 
 18) Update your .learn-config
 
     - Travel to your Linux home directory by typing `cd`, you can change your
-      .learn-config by typing:
+      `.learn-config` by typing:
 
     ```sh
     nano .learn-config
@@ -289,7 +301,9 @@ or
 cd ../../mnt/c/users/your_windows_username
 ```
 
-Remember, put all of your stuff in your windows directories! That way, you have access to it via your Linux Terminal or your Windows OS, and your VSCode editor can open to the correct location when you use
+Remember, put all of your stuff in your windows directories! That way, you have
+access to it via your Linux Terminal or your Windows OS, and your VSCode editor
+can open to the correct location when you use
 
 ```sh
 code .
@@ -410,16 +424,16 @@ phantomjs --version
 
 ![PGAdmin in start](https://curriculum-content.s3.amazonaws.com/setup-instructions/pgadmin-start.png)
 
- - This should open up pgAdmin in your browser. Start a server by right-clicking "PostgreSQL" and selecting "Connect Server"
+- This should open up pgAdmin in your browser. Start a server by right-clicking "PostgreSQL" and selecting "Connect Server"
 
 ![PostgreSQL selection](https://curriculum-content.s3.amazonaws.com/setup-instructions/start-server.png)
 ![PostgreSQL connect](https://curriculum-content.s3.amazonaws.com/setup-instructions/connect-server.png)
 
- - Enter the password you defined during the download
- - Your PostgreSQL server is running, and can now be integrated into your projects.
- - You also want to set up a new user/role and password that you want to use
-   with your rails app. Ensure you give your user/role all available permissions
-   during setup.
+- Enter the password you defined during the download
+- Your PostgreSQL server is running, and can now be integrated into your projects.
+- You also want to set up a new user/role and password that you want to use with
+  your rails app. Ensure you give your user/role all available permissions
+  during setup.
     - During setup, ensure to fill out `Name` in the `General` tab, `Password`
       in the `Definition` tab, and enable all permissions in the `Privileges`
       tab.
@@ -430,9 +444,9 @@ phantomjs --version
 
   **EXAMPLE: CONNECTING YOUR POSTGRESQL SERVER TO YOUR RAILS APP**
 
-  - Make sure your server is connected and roles are configured as described above.
-  - Make sure you are in a suitable directory (in your Windows file system
-    space) and create a Rails app configured to use PostgreSQL:
+- Make sure your server is connected and roles are configured as described above.
+- Make sure you are in a suitable directory (in your Windows file system
+space) and create a Rails app configured to use PostgreSQL:
 
     ```sh
     rails new my-first-app --database=postgresql
@@ -496,13 +510,13 @@ https://aka.ms/wslstore Press any key to continue...`
 
 1. Search for 'Services' in your Windows search bar, open it up  
 
-![find services ](https://curriculum-content.s3.amazonaws.com/setup-instructions/find_services.png)
+    ![find services ](https://curriculum-content.s3.amazonaws.com/setup-instructions/find_services.png)
 
 2. Scroll down to the `L` section, and find `LxssManager`. If it is running,
    right click and `Restart` it. If it is not running, right click it and
    `Start` it.  
 
-![Lxss Manager](https://curriculum-content.s3.amazonaws.com/setup-instructions/lxss_manager.png)
+    ![Lxss Manager](https://curriculum-content.s3.amazonaws.com/setup-instructions/lxss_manager.png)
 
 [You can check out the github issue here](https://github.com/Microsoft/WSL/issues/2576)
 
@@ -513,3 +527,7 @@ https://aka.ms/wslstore Press any key to continue...`
 [Microsoft Documentation: Windows Subsystem for Linux]( https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
 [Setting up a SSH Key with GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)  
 [Basic Linux Commands](https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners)
+
+[VS Code]: https://code.visualstudio.com/download
+[WSL Installation Guide]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+[Hack font]: https://sourcefoundry.org/hack/
