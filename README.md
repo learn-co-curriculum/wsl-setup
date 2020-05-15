@@ -61,20 +61,20 @@
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     ```
 
-> **Note:** If you receive an error after running the command above, try to
-> continue on with the next set of commands. If you are unable to install RVM,
-> visit [RVM's Security page][] for additional options for getting these
-> security keys.
+    > **Note:** If you receive an error after running the command above, try to
+    > continue on with the next set of commands. If you are unable to install RVM,
+    > visit [RVM's Security page][] for additional options for getting these
+    > security keys.
 
-[RVM's Security page]: http://rvm.io/rvm/security
+    [RVM's Security page]: http://rvm.io/rvm/security
 
-Once you have the security keys, run the following:
+    Once you have the security keys, run the following:
 
-```sh
-sudo apt-add-repository -y ppa:rael-gc/rvm
-sudo apt-get update
-sudo apt-get install rvm
-```
+    ```sh
+    sudo apt-add-repository -y ppa:rael-gc/rvm
+    sudo apt-get update
+    sudo apt-get install rvm
+    ```
 
 9) Next, to set up a ruby version most compatible with Learn.co labs, we want to
    download ruby 2.6.1 and set it as our default:
