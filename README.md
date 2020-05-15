@@ -187,51 +187,56 @@ VSCode.
 
 17) Additional User Settings *(OPTIONAL)*:
 
-    - You can add a few things to your User Settings to customize and improve
-      your programming experience. Most importantly, we can make VSCode treat
-      .erb files like .html files, allowing us to use all the same shortcuts and
-      get the same syntax highlighting.
-    - To open up user settings, again open up the Command Palette using `F1` or
-      `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
+- You can add a few things to your User Settings to customize and improve your
+  programming experience. Most importantly, we can make VSCode treat .erb files
+  like .html files, allowing us to use all the same shortcuts and get the same
+  syntax highlighting.
+- To open up user settings, again open up the Command Palette using `F1` or
+  `Ctr`+`Shift`+`p` and type `Preferences: Open Settings (JSON)`
 
     ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/settings-json.png)
 
-    - You will see a screen like this:
+- You will see a screen like this:
 
     ![Preferences - settings](https://curriculum-content.s3.amazonaws.com/setup-instructions/user-settings.png)
 
-    - to have your erb files treated like html, add the following to your user
-      settings (circled above):
+- to have your erb files treated like html, add the following to your user
+  settings (circled above):
 
-        ```sh
-        "emmet.includeLanguages": {
-            "erb": "html"
-        }
-        ```
+    ```sh
+    "emmet.includeLanguages": {
+        "erb": "html"
+    }
+    ```
 
-    - some optional personal preferences that I like:
+- some optional personal preferences that I like:
 
-        ```sh
-        "window.zoomLevel": -1,
-        "editor.acceptSuggestionOnEnter": "off",
-        "editor.fontSize": 11,
-        "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
-        ```
+    ```sh
+    "window.zoomLevel": -1,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.fontSize": 11,
+    "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
+    ```
 
-    - Note that for the Hack font to be usable, you have to downlload it. You
-      can check it out [here][Hack font].
+- Note that for the Hack font to be usable, you have to downlload it. You can
+  check it out [here][Hack font].
 
 18) Update your .learn-config
 
-    - Travel to your Linux home directory by typing `cd`, you can change your
-      `.learn-config` by typing:
+- Open the WSL terminal. You can access the terminal through VS Code now, or you
+  can open a separate terminal by typing `wsl` into the Window Search Bar.
+  Alternatively, you can also press the `Windows` and `R` keys (for run), and
+  entering `wsl`.
+
+- Travel to your Linux home directory by typing `cd`, you can change your
+  `.learn-config` by typing:
 
     ```sh
     nano .learn-config
     ```
 
-    - and customizing where you want the `learn open` command to save labs,
-      and setting your editor to VSCode. Here's what it should look like:
+- and customizing where you want the `learn open` command to save labs, and
+  setting your editor to VSCode. Here's what it should look like:
 
     ```sh
     ---
@@ -239,12 +244,12 @@ VSCode.
     :editor: code
     ```
 
-    - You save a file you have modified in `nano` by following the directions at
-      the bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter`
-      to save your changes.
+- You save a file you have modified in `nano` by following the directions at the
+  bottom of the screen: click `Ctrl`+`X` and then `y` and then `Enter` to save
+  your changes.
 
-    - If you feel uncomfortable with these commands, check out the basic Linux
-      commands link below in the resources.
+- If you feel uncomfortable with these commands, check out the basic Linux
+  commands link below in the resources.
 
 ## Important Knowledge: Basic Use
 
