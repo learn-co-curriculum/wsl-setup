@@ -92,11 +92,7 @@ Note: if you get an error at this step, see FAQ below.
   \curl -sSL https://get.rvm.io | bash -s stable --ruby
   ```
   
-  and finally
-
-  ```
-  source ~/.rvm/scripts/rvm
-  ```
+  When RVM finishes installing, close out of Ubuntu entirely and reopen it to make sure RVM is running.
 
 9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.6.1 and set it as our default:
 
