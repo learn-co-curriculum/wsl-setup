@@ -86,7 +86,19 @@ Note: if you get an error at this step, see FAQ below.
   > gpg --keyserver hkp://keys.gnupg.net:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
   > ```
 
-  Once you have successfully run either the `gpg` or the `gpg2` command above, run the following:
+  Once you have successfully run either the `gpg` or the `gpg2` command above. Check if `curl` is installed:
+  
+  ```
+  curl -V
+  ```
+
+  If not, install it:
+
+  ```
+  sudo apt-get install curl
+  ```
+
+  Then run the following:
 
   ```
   \curl -sSL https://get.rvm.io | bash -s stable --ruby
@@ -94,11 +106,11 @@ Note: if you get an error at this step, see FAQ below.
   
   When RVM finishes installing, close out of Ubuntu entirely and reopen it to make sure RVM is running.
 
-9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.6.1 and set it as our default:
+9)  Next, to set up a ruby version most compatible with Learn.co labs, we want to download ruby 2.7.3 and set it as our default:
 
   ```
-  rvm install 2.6.1
-  rvm use 2.6.1 --default
+  rvm install 2.7.3
+  rvm use 2.7.3 --default
   ```
 
 10)  Let's install the bundler gem:  
@@ -150,7 +162,7 @@ Note: if you get an error at this step, see FAQ below.
   - First, install NVM:
 
     ```
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
     ```
   
   - Then, reload bash profile into current session:
@@ -181,7 +193,7 @@ You can use any editor you want, but I am going to be walking through setting up
 
   - open up VSCode
   - open the Command Palette via `F1` or `Ctrl`+`Shift`+`p`
-  - begin typing the following: `Terminal: Select Default Shell`  until you see it. Select that option.
+  - begin typing the following: `Terminal: Select Default Profile`  until you see it. Select that option.
 
   ![command palette](https://curriculum-content.s3.amazonaws.com/setup-instructions/default-shell.png)  
 
